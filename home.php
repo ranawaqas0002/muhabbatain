@@ -1,0 +1,1665 @@
+ <?php
+
+/**
+
+ * Template Name: Home Page
+
+ * Description: This template is for diplaying the homepage
+
+ *
+
+ */
+
+ get_header(); ?> 
+ <style>
+    section.new input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email::placeholder {
+    color: #C5C5C5 !important;
+}
+    .wpcf7-form{
+        overflow: visible !important;
+    }
+    section.new .small-text {
+    letter-spacing: 2px;
+}
+.form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .form-group.button-group {
+    flex-basis: calc(10% - 10px);
+}
+
+        .form-group {
+            flex-basis: calc(22% - 10px);
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 40px;
+            border: none;
+            padding-left: 22px;
+            font-size: 14px;
+            color: #000000;
+            outline: none;
+        }
+
+        .form-group input[type="submit"] {
+            flex-basis: 8%;
+            background-color: transparent;
+            background-image: url('/waitlist/wp-content/uploads/2023/09/Subtract.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            width: 42px; /* Set a width for the button */
+            height: 42px; /* Set a height for the button */
+        }
+
+        /* iphone section */
+
+        .iphone-bg-img-desktop{
+            background-image: url('/waitlist/wp-content/uploads/2023/09/iphone-bg-new.png');
+            /* background-color: #9D101E; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px 30px;
+            height: 590px;
+            padding-top: 70px;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 150px;
+        }
+        section.section-4.iphone-sec .container {
+    padding-right: 0px;
+}
+        .iphone-sec-row{
+            align-items: center;
+        }
+        .iphone-col1 {
+    padding-left: 120px;
+}
+        .iphone-col1 .iphone-mob img {
+    max-width: 389px;
+    width: 100%;
+}
+.iphone-col1 h3 {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    padding-right: 50px;
+}
+.iphone-col1 p {
+    font-size: 18px;
+    line-height: 26px;
+}
+.iphone-mob.iphone-col2 {
+    margin-top: -80px;
+}
+button.win-btn {
+    max-width: 200px;
+    width: 100%;
+    height: 49px;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.iphone-col1 a {
+    text-underline-offset: 6px;
+}
+.iphone-col1 a:hover {
+    text-decoration-thickness: 2px;
+    opacity: 70%;
+}
+.iphone-mob.iphone-col2 img {
+    max-width: 400px;
+    width: 100%;
+}
+
+
+        /* End iphone section */
+
+        .waitlist-bg-img-desktop{
+            background-image: url('/waitlist/wp-content/uploads/2023/09/waitlist-bg-imgg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px 30px;
+            height: 280px;
+            padding-top: 70px;
+            border-radius: 30px;
+            /* margin-left: 10px; */
+            /* max-width: 1210px; */
+            width: 100%;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+        .form-group.phone-field-flex {
+    display: flex;
+}
+        .radio-label{
+    display: inline-block !important;
+    margin-right: 20px;
+}
+.form-group.radio-btn-group {
+    display: inline-flex;
+    align-items: center;
+}
+       
+.radio-buttons {
+    margin-left: 25px;
+}
+.radio-btn-group label {
+    font-weight: 500;
+}
+
+
+input#male:before {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -18px;
+    content: 'M';
+    background-color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input#female:before {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -10px;
+    content: 'F';
+    background-color: white;
+    padding: 4px 13px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input#male:checked::before {
+    border: 2px solid #9D101E !important;
+    font-weight: 700;
+}
+input#female:checked::before {
+    border: 2px solid #9D101E !important;
+    font-weight: 700;
+}
+/* input#female:checked + input#female:before {
+    border: 2px solid red !important;
+} */
+input#male:checked{
+    color: #9D101E;
+    font-weight: 600;
+}
+input#female:checked{
+    color: #9D101E;
+    font-weight: 600;
+}
+/* input[type="radio"]:checked + .radio-checkmark::before {
+    background-color: red;
+    color: red;
+
+} */
+/* input[type="radio"] {
+    display: none;
+} */
+/* label.radio-label {
+    font-weight: 500;
+    border: 1px solid #000000;
+    width: 30px;
+    text-align: center;
+    border-radius: 20px;
+} */
+/* .radio-label input[type="radio"]:checked + span {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+} */
+.form-group input[type="tel"] {
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    padding-left: 0px !important;
+}
+.phone-field-1 input.wpcf7-form-control.wpcf7-phonetext.wpcf7-text.wpcf7-validates-as-phonetext{
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+/* .flag-box {
+    display: none !important;
+}
+.iti-flag {
+    display: none;
+}
+.iti-flag.ae {
+    display: none;
+}
+.intl-tel-input.allow-dropdown .selected-flag, .intl-tel-input.separate-dial-code .selected-flag {
+    width: 1px;
+} */
+/* input.wpcf7-form-control.wpcf7-phonetext.wpcf7-text.wpcf7-validates-as-phonetext {
+    padding-left: 15px;
+} */
+/* .intl-tel-input .selected-flag .iti-arrow{
+right: -46px;
+} */
+
+
+    .rotate.animate {
+    color: black !important;
+    opacity: 1 !important;
+    animation: rotate-animation 5s linear infinite;
+}
+
+    .header-image img {
+    position: absolute;
+    right: 0px;
+    top: 90px;
+    z-index: 100;
+}
+.header-logo img {
+    max-width: 243px;
+    width: 100%;
+}
+.image-2 img {
+    position: absolute;
+    left: 0px;
+    max-width: 420px;
+    width: 100%;
+}
+.small-text{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.black-text{
+    color: #000000;
+}
+.gray-text{
+    color: #313131;
+}
+.newsletter{
+    text-align: center;
+}
+section.new input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email {
+    height: 52px;
+    background-color: #ffffff;
+    border: 2px solid #82C1EF;
+    border-radius: 10px;
+    width: 100%;
+    color: #949494;
+    padding-left: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+/* section.new input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #1D8DDE !important;
+    border-radius: 12px;
+    border: none;
+    padding-left: 22px;
+    font-size: 14px;
+    color: #000000;
+    height: 52px;
+} */
+input.wpcf7-form-control.wpcf7-submit.has-spinner {
+    width: 100%;
+    height: 52px;
+    border-radius: 10px;
+    background-color: #9D101E;
+    border: 2px solid #9D101E;
+    color: white;
+    font-weight: 600;
+}
+section.new .row.form-row{
+    max-width: 560px;
+    width: 100%;
+    margin: auto;
+}
+label{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+}
+.form-row p{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom:8px;
+
+}
+.form-col-2 {
+    padding-left: 0px;
+}
+.form-col-1 {
+    padding-right: 5px;
+}
+.row.pull-up {
+    margin-top: -430px;
+    padding-bottom: 50px;
+}
+.image-3{
+    padding-right: 195px;
+    padding-top: 170px;
+}
+.padding-para{
+    padding-left: 27%;
+    padding-right: 27%;
+}
+/* .sec2-col-1 {
+    display: inline-grid;
+    align-content: center;
+} */
+section.section-2 .row {
+
+    align-items: center;
+}
+.sec2-col-2 img {
+    width: 100%;
+}
+.custom-shape-divider-top {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top svg {
+    /* position: relative;
+    display: block;
+    width: calc(158% + 1.3px);
+    height: 260px; */
+    position: relative;
+    display: block;
+    width: calc(158% + 1.3px);
+    height: 306px;
+}
+
+.custom-shape-divider-top .shape-fill {
+    fill: #FFFFFF;
+}
+
+.browse-card{
+    background-color: #ffffff;
+    border-radius: 46px;
+    height: 342px;
+    text-align: center;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+section.section-3 .row{
+    justify-content: center;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #9D101E !important;
+    font-size: 22px;
+}
+.slick-dots button#slick-slide-control00:before, .slick-dots button#slick-slide-control01:before, .slick-dots button#slick-slide-control02:before, .slick-dots button#slick-slide-control03:before {
+    font-size: 26px !important;
+}
+p.card-para{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+}
+section.section-4 .arrow-img {
+    position: absolute;
+    left: 0px;
+    margin-top: -90px;
+    padding-left: 0px;
+}
+section.section-4 .arrow-img img {
+    max-width: 170px !important;
+    width: 100%;
+}
+
+/* START MATCH CARD CSS */
+.card-flex{
+    display: flex;
+}
+.match-card img{
+    max-width: 30px;
+    width: 100%;
+}
+.match-card p{
+    margin-bottom: 0px;
+    font-weight: 700 !important;
+}
+.match-card-para{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.match-card-box {
+    background-color: #ffffff;
+    padding: 7px 17px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    max-width: 189px;
+    width: 100%;
+    flex: 0 0 20%;
+    max-width: 17%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 29px;
+    margin-bottom: 30px;
+    height: 52px;
+}
+.match-card-img{
+    text-align: center;
+}
+.card-2 {
+    margin-top: 40px !important;
+}
+
+.banner-bottom-img{
+    padding: 0px;
+}
+.banner-bottom-img img{
+    /* max-width: 1209px; */
+    width: 100%;
+    max-height: 570px;
+    height: 100%;
+}
+
+section.section-3 p.padding-para {
+    font-size: 20px;
+    padding-left: 25% !important;
+    padding-right: 25% !important;
+}
+.browse-card h3 {
+    padding-bottom: 5px;
+}
+.image-2{
+            z-index: 1;
+        }
+
+.sparkle-img {
+    position: absolute;
+    right: 47%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: 181px;
+}
+.sparkle-img img {
+    width: 34px;
+}
+
+/* CONTACT FORM */
+section.new .wpcf7 form .wpcf7-response-output {
+    border: 2px solid #9D101E;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #000 !important;
+}
+section.new p.extra-padding {
+    padding-bottom: 12px;
+}
+
+@media screen and (min-width: 2200px) {
+    .sparkle-img{
+        right: 45% !important;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    .display-mobile{
+    display: none;
+}
+    .form-group.radio-btn-group {
+    justify-content: center;
+}
+    .custom-shape-divider-top{
+            margin-top: 20px !important;
+        }
+    .sec2-col-1 {
+        padding-right: 30px;
+        padding-left: 70px;
+    }
+    section.bottom-waitlist.display-desktop {
+    margin-bottom: 30px;
+}
+h2.waitlist-heading {
+            font-size: 32px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+
+}
+@media (min-width:1200px) and (max-width:1399px) {
+    .header-image img{
+        max-width: 340px;
+        width: 100%;
+    }
+       /* Start iphone section */
+       .iphone-col1 {
+    padding-left: 55px;
+}
+          /* End iphone section */
+    .browse-card{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .sparkle-img {
+    position: absolute;
+    right: 43%;
+    margin-top: 188px;
+}
+input#female:before{
+        margin-left: -10px;
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+       /* Start iphone section */
+       .iphone-col1 {
+    padding-left: 10px;
+}
+.iphone-col1 h1{
+    font-size: 58px;
+}
+.iphone-col1 h3 {
+    font-size: 28px;
+    line-height: 36px;
+}
+.iphone-col1 .sm-pt {
+    padding-top: 5px;
+}
+button.win-btn{
+    margin-top: 5px;
+}
+
+
+          /* End iphone section */
+    input#female:before{
+        margin-left: -3px;
+    }
+    input#male:before{
+        margin-left: -22px;
+    }
+    .radio-label {
+    margin-right: 10px;
+}
+    .sec2-col-1 {
+        padding-left: 20px;
+    }
+    .sparkle-img {
+    right: 45%;
+    margin-top: 200px;
+}
+    .match-card-box{
+        margin-right: 23px
+    }
+    .header-image img {
+    max-width: 260px;
+    width: 100%;
+    top: 104px !important;
+}
+.image-2 img{
+    max-width: 270px;
+    width: 100%;
+}
+.image-3{
+    padding-right: 0px;
+} 
+.sec2-col-1 {
+        padding-right: 10px;
+    }   
+    .browse-card {
+    height: 330px;
+    width: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.waitlist-bg-img{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form-row{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.custom-shape-divider-top{
+            margin-top: -50px !important;
+        }
+}
+@media screen and (min-width: 768px) {
+    .display-mobile{
+    display: none;
+}
+    .match-card p{
+    font-size: 14px;
+}
+    .arrow-mobile {
+    display: none;
+}
+.heading-mobile{
+    display: none;
+}
+    
+}
+@media (min-width:768px) and (max-width:992px) {
+
+    /* Start iphone Section */
+    .iphone-bg-img-desktop {
+    height: 630px;
+    padding-bottom: 0px;
+    padding-top: 100px;
+}
+.iphone-bg-img-desktop {
+    margin-top: 0px;
+}
+section.section-4.iphone-sec .container {
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 992px;
+    width: 102%;
+}
+section.section-4.iphone-sec {
+    overflow: hidden !important;
+}
+.iphone-col1 h1 {
+    font-size: 38px;
+    line-height: 20px;
+}
+.iphone-col1 h3 {
+    font-size: 26px;
+    line-height: 32px;
+}
+.iphone-col1 p {
+    font-size: 16px;
+    line-height: 22px;
+}
+.iphone-col1 .sm-pt {
+    padding-top: 10px;
+}
+.iphone-mob.iphone-col2 {
+    margin-top: 0px;
+    text-align: center;
+}
+    /* .iphone-bg-img-desktop{
+        height: 900px;
+    }*/
+    .iphone-col1 {
+    padding-left: 70px;
+}
+.iphone-mob.iphone-col2 {
+    margin-top: 0px;
+    text-align: center;
+}
+.iphone-mob.iphone-col2 img {
+    max-width: 230px;
+    width: 100%;
+} 
+    /* End iphone Section */
+    /* input.wpcf7-form-control.wpcf7-phonetext.wpcf7-text.wpcf7-validates-as-phonetext {
+    padding-left: 25px;
+} */
+/* .intl-tel-input .selected-flag .iti-arrow{
+right: -65px;
+} */
+input#female:before{
+    margin-left: -6px;
+}
+    .sparkle-img img {
+    position: absolute;
+    right: -39%;
+    margin-top: -58px;
+    width: 40px;
+}
+    section.section-3 p.padding-para{
+        font-size: 16px;
+        line-height: 22px;
+        padding-left: 20% !important;
+        padding-right: 20% !important;
+    }
+    section.section-2.couple-2.pd-150 {
+    padding-bottom: 0px;
+}
+    .header-logo {
+    text-align: center;
+}
+.image-2 img {
+    max-width: 270px;
+    width: 100%;
+}
+.row.pull-up {
+    margin-top: -120px;
+    padding-bottom: 340px;
+}
+.arrow-desktop{
+    position: absolute;
+    right: 0px;
+    padding-right: 10px;
+    margin-top:-230px;
+}
+.padding-para{
+    margin-bottom: 10px;
+}
+.row.form-row {
+    max-width: 460px;
+    width: 100%;
+}
+input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email{
+    width: 100%;
+}
+.custom-shape-divider-top svg {
+    height: 140px;
+}
+.sec2-col-2{
+    padding-top: 40px;
+}
+.slider-container {
+    padding-top: 40px;
+}
+.slick-track {
+    margin-bottom: 40px !important;
+}
+.desktop-section {
+    display: none;
+}
+.card-2 {
+    margin-top: 0px !important;
+}
+
+
+.match-card-box {
+                flex: 0 0 25%;
+                max-width: 23%;
+                /* max-width: 170px !important; */
+                width: 100%;
+                margin-left: 5px;
+                margin-right: 9px;
+            }
+
+
+            .form-group {
+                flex-basis: 100%; /* Make fields 100% width on tablets and smaller screens */
+            }
+            .form-group.button-group p {
+    text-align: center;
+}
+
+            .form-group.button-group {
+    flex-basis: calc(100%) !important;
+}
+            .waitlist-bg-img-mobile{
+            background-image: url('/waitlist/wp-content/uploads/2023/09/join-list-mobile.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-height: 720px;
+            height: 100%; 
+            max-width: 868px;
+            width: 100%;
+            margin-left: 0px;
+        }
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 750px;
+            
+}
+
+
+}
+@media (min-width:600px) and (max-width:767px) {
+    section.section-4 .pd-right-30{
+        padding-right: 30px !important;
+    }
+     
+    .row.pull-up {
+    margin-top: -85px;
+    padding-bottom: 280px;
+
+}
+.custom-shape-divider-top svg {
+    height: 70px;
+    
+}
+
+.match-card-box {
+                flex: 0 0 50%;
+                max-width: 46%;
+                height: 45px;
+                padding: 5px 15px;
+                margin-bottom: 28px;
+                margin-left: 0px;
+                
+            }
+            .match-card img{
+                max-width: 20px;
+                width: 100%;
+            }
+            .mobile-card-2{
+                margin-right: 0px;
+            }
+            .match-card-para{
+                padding-left: 0px !important;
+            }
+
+}
+@media screen and (max-width: 768px) {
+    .form-group input[type="submit"] {
+    width: 37px;
+    height: 37px;
+}
+    section.new .row.form-row{
+    max-width: 400px !important;
+    width: 100% !important;
+    margin: auto;
+}
+    /* Start iphone Section */
+    .iphone-bg-img-mobile{
+        background-image: url('/waitlist/wp-content/uploads/2023/09/iphone-bg-mob.png');
+            /* background-color: #9D101E; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px 30px;
+            height: 590px;
+            padding-top: 70px;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 150px;
+    }
+    .iphone-bg-img-mobile h1{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+}
+.iphone-bg-img-mobile h3 {
+    text-align: center;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 28px;
+    font-size: 21px;
+}
+.iphone-bg-img-mobile p {
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+    section.section-4.iphone-sec{
+        padding-left: 0px;
+        padding-right: 0px;
+        overflow: hidden !important;
+    }
+    section.section-4.iphone-sec .container {
+    padding: 0px;
+}
+.iphone-col1{
+    text-align: center !important;
+}
+.display-mobile a{
+    font-size: 14px !important;
+}
+.display-desktop-iphone{
+    display: none;
+}
+
+.iphone-bg-img-desktop {
+    height: 630px;
+    padding-top: 110px;
+    /* padding-bottom: 50px !important; */
+    border-radius: 0px;
+    width: 104%;
+    margin-top: 0px;
+}
+    .iphone-col1 {
+    padding-left: 10px;
+}
+.iphone-mob.iphone-col2 {
+    margin-top: 0px;
+    text-align: center;
+    padding-left: 30px;
+}
+.iphone-mob.iphone-col2 img {
+    max-width: 233px;
+    width: 100%;
+    margin-top: 20px;
+}
+.iphone-col1 h3 {
+    font-size: 20px;
+    line-height: 24px;
+    padding-right: 10px;
+}
+.iphone-col1 p {
+    font-size: 12px;
+    line-height: 20px;
+}
+.iphone-col1 .sm-pt {
+    padding-top: 5px;
+}
+button.win-btn {
+    max-width: 135px;
+    width: 100%;
+    height: 41px;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+/* END iphone Section */
+    .form-group.radio-btn-group {
+    margin-top: 10px;
+}
+    input#male:before{
+        padding: 5px 10px;
+    }
+    input#female:before{
+        padding: 5px 12px;
+    }
+    label.radio-label{
+        width: 22px;
+    }
+    /* input.wpcf7-form-control.wpcf7-phonetext.wpcf7-text.wpcf7-validates-as-phonetext {
+    padding-left: 25px;
+}
+.intl-tel-input .selected-flag .iti-arrow{
+right: -65px;
+}
+     */
+    .match-card p {
+    font-size: 12px;
+}
+   
+section.section-4 .sparkle-img img {
+    position: absolute;
+    right: -39%;
+    margin-top: -120px;
+    width: 32px;
+}
+    .padding-para{
+        padding-left: 19%;
+    padding-right: 19%;
+    margin-bottom: 10px;
+    }
+    
+.image-2 img {
+    max-width: 220px;
+    width: 100%;
+    margin-top: 30px !important;
+}
+
+.image-3 {
+    padding-right: 0px;
+    padding-top: 0px;
+    max-width: 100px;
+    width: 100%;
+}
+.header-logo {
+    text-align: center;
+}
+.header-logo img {
+    max-width: 154px;
+    width: 100%;
+}
+.row.form-row {
+    max-width: 240px;
+    width: 100%;
+    margin: auto;
+}
+.row.form-row p{
+    padding-left: 0px;
+    text-align: center;
+}
+.row.form-row label{
+    font-size: 10px;
+}
+.form-col-1{
+    padding-left: 0px;
+}    
+input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email{
+    border: 1px solid #1D8DDE;
+    width: 100%;
+}
+input.wpcf7-form-control.wpcf7-submit.has-spinner{
+    width: 70%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    height: 39px !important;
+}
+.small-text{
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.arrow-desktop {
+    display: none;
+}
+.arrow-mobile {
+    position: absolute;
+    /* right: 133px; */
+    right: 34px;
+    margin-top: -15px;
+} 
+.pd-none-mob{
+    padding-bottom: 5px;
+} 
+.sec2-col-2{
+    padding-top: 40px;
+    margin-bottom: 40px;
+}
+.sec2-container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.heading-desktop{
+    display: none;
+}
+.section-3{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.section-3 h2{
+    text-align: left;
+}
+p.padding-para.para-left{
+    text-align: left;
+    padding-left: 0px;
+    font-size: 13px;
+    padding-right: 10px;
+    padding-top: 8px;
+}
+.section-3 p.padding-para {
+    margin-bottom: 50px;
+}
+/* .slider-container {
+    padding-top: 20px;
+} */
+.browse-card{
+    margin-left: 0px;
+    margin-right: 10px;
+}
+.section-3 .browse-card p{
+    font-size: 16px;
+    line-height: 22px;
+
+}
+section.section-3 h2 {
+    font-size: 29px;
+    line-height: 35px;
+}
+.slick-track {
+    margin-bottom: 30px !important;
+}
+.desktop-section {
+    display: none;
+}
+section.section-4 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.custom-shape-divider-top {
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top svg {
+    position: relative;
+    display: block;
+    width: calc(266% + 1.3px);
+    height: 118px;
+    transform: rotateY(180deg);
+    background-color: #ffffff;
+}
+.custom-shape-divider-top .shape-fill {
+    fill: #F4F5FC;
+}
+
+section.new input.wpcf7-form-control.wpcf7-submit.has-spinner {
+    font-size: 12px;
+}
+.mb-pd-o{
+    padding-left: 0px;
+}
+
+
+
+.card-2 {
+    margin-top: 0px !important;
+}
+section.section-2.couple-2.pd-150 {
+    padding-bottom: 0px;
+    margin-bottom: -40px;
+}
+.banner-bottom-img {
+    padding: 0px;
+}
+.form-group {
+    flex-basis: 100%;
+}
+h2.waitlist-heading {
+    font-size: 28px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.bottom-waitlist .container{
+    margin-left:0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+section.bottom-waitlist .form-row{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+section.bottom-waitlist.display-desktop {
+    overflow: hidden;
+}
+section.bottom-waitlist .container-sm, .container {
+    max-width: 768px;
+}
+.form-group.button-group {
+    flex-basis: calc(100%) !important;
+}
+.form-group.button-group p {
+    
+    position: absolute;
+    right: 30px;
+    margin-bottom: -55px;
+    margin-top: -50px;
+}
+.waitlist-bg-img-mobile{
+            background-image: url('/waitlist/wp-content/uploads/2023/09/join-list-mobile.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-height: 740px;
+            height: 100%; 
+            max-width: 868px;
+            width: 100%;
+            margin-left: 0px;
+        }
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 750px;
+            
+}
+section.new input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email {
+    font-size: 12px;
+    height: 39px !important;
+}
+section.section-2.couple-2 .pt-60 {
+    padding-top: 0px !important;
+}
+
+section.section-3 p.padding-para {
+    font-size: 13px;
+    padding-left: 0px !important;
+    padding-right: 20px !important;
+}
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"]{
+    height: 48px;
+}
+        
+}
+@media screen and (max-width:600px) {
+    section.section-4 .pd-right-30{
+        padding-right: 10px !important;
+    }
+    .row.pull-up {
+    margin-top: -50px;
+    padding-bottom: 370px;
+
+}
+.custom-shape-divider-top svg {
+    height: 70px;
+}
+
+
+.match-card-box {
+                flex: 0 0 50%;
+                max-width: 44%;
+                height: 33px;
+                padding: 0px 15px;
+                margin-bottom: 28px;
+                margin-left: 0px;
+
+            }
+            .match-card img{
+                max-width: 20px;
+                width: 100%;
+            }
+            .mobile-card-2{
+                margin-right: 0px;
+            }
+            .match-card-para{
+                padding-left: 0px !important;
+            }
+section.new p.padding-para {
+    padding-top: 5px;
+}
+section.new p.extra-padding {
+    padding-bottom: 7px;
+}
+section.couple-2 p.sub-heading-16-14 {
+    margin-bottom: 10px;
+}
+
+    
+}
+
+@media screen and (max-width: 414px) {
+    section.new .form-row{
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    section.new .padding-para{
+        padding-left: 12% !important;
+        padding-right: 12% !important;
+    }
+    section.new .row.form-row {
+    max-width: 330px !important;
+    width: 100% !important;
+    margin: auto;
+}
+    
+}
+@media screen and (max-width: 390px) {
+    section.section-4 .sparkle-img img {
+    right: -30%;
+}
+  
+}
+@media screen and (max-width: 374px) {
+    .iphone-bg-img-mobile {
+    padding: 20px 15px;
+}
+.iphone-bg-img-desktop {
+    padding-top: 110px;
+}
+    
+}
+ </style>
+
+<!-- Section 1 -->
+<section class="new pull-section-1">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-4 sm-pt header-logo">
+        <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mohabbatein.svg" alt=""> -->
+        </div>
+        <div class="col-lg-8 header-image align-right d-none d-lg-block ">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/image111.png" alt="" >
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Section 2 -->
+<section class="new">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12 newsletter pt-150">
+            <p class="small-text extra-padding animate" data-animate="fade-in-bottom">Bringing Soulmates Together</p>
+            <h1 class="black-text fade-in-bottom">Join Our Exclusive<br> Waiting List</h1>
+            <p class="sm-pt mb-60 padding-para fade-in-1s gray-text font-10">Our purpose is to create a safe, simple, and efficient platform for those who believe in marriage and are ready to discover their life partners.</p>
+            <?php echo apply_shortcodes( '[contact-form-7 id="fe63086" title="Contact form 1"]' ); ?>
+          </div>  
+        </div>
+        <div class="row pull-up">
+        <div class="col-lg-3 sm-pt image-2 fade-in" >
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/image-22.png" alt="" >
+        </div>
+        <div class="col-lg-9 sm-pt image-3 align-right arrow-desktop ">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/arrow.svg" alt="">
+        </div>
+        <div class="col-lg-9 sm-pt image-3 align-right arrow-mobile ">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/arrow-mobile.svg" alt="">
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-2 blue-bg pd-150">
+<div class="custom-shape-divider-top">
+<svg data-name="Layer 1" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+</div>
+    <div class="container pt-60 sec2-container">
+        <div class="row">
+            <div class="col-lg-6 sec2-col-1 animate" data-animate="fade-in-left">
+                <p class="sub-heading " >Join Our Waiting List</p>
+                <h2 class="pd-none-mob pd-30">Be one of the first to explore <span class="red-text">Mohabbatein</span> when we launch.</h2>
+                <p>By joining our waiting list, you'll enjoy priority access to our platform. It's more than just a website - it's a space where destinies intertwine. You will also receive exciting updates, marriage guidance, sneak peeks, and exclusive access straight to your inbox.</p>
+                <p>Don't let destiny wait, sign up today and take the first step on your journey to find that special someone. With Mohabbatein, your happily ever after is just a few clicks away.</p>
+            </div>
+            <div class="col-lg-6 sec2-col-2 animate" data-animate="fade-in-right">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/couple-1x.png" alt="">
+            </div>
+        </div>
+    </div>  
+</section>
+
+<section class="section-3 blue-bg pd-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 " >
+                <h2 class="align-center heading-desktop animate" data-animate="fade-in-bottom">Browse. Connect. <span class="red-text">Ignite Sparks.</span> </h2>
+                <h2 class="heading-mobile animate" data-animate="fade-in-bottom">Browse. Connect. <br><span class="red-text">Ignite Sparks.</span> </h2>
+                <p class="padding-para align-center mb-60 para-left animate" data-animate="fade-in-bottom">Effortlessly create your profile, explore captivating matches, and ignite meaningful connections, all in just a few simple steps...</p>
+            </div>
+            <div class="slider-container montserrat-font">
+            <div class="col-lg-3 browse-card slide-1 animate" data-animate="fade-in">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/card-1.svg" alt="" class="sm-pd">
+            <h3 class="sm-pd">Sign Up</h3>
+            <p class="sm-pd card-para">Create your personalized profile, showcasing your unique personality, interests, and goals.</p>
+            </div>
+            <div class="col-lg-3 browse-card card-2 slide-2 animate" data-animate="fade-in">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/card-2.svg" alt="" class="sm-pd">
+            <h3 class="sm-pd">Connect</h3>
+            <p class="sm-pd">Using our advanced search filters to refine your preferences and find the perfect partner.</p>
+            </div>
+            <div class="col-lg-3 browse-card slide-3 animate" data-animate="fade-in">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/card-3.svg" alt="" class="sm-pd">
+            <h3 class="sm-pd">Meet</h3>
+            <p class="sm-pd">When you find someone special, take the next step and arrange a meeting, guided by our tips.</p>
+            </div>
+            <div class="col-lg-3 browse-card card-2 slide-4 animate" data-animate="fade-in">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/card-4.svg" alt="" class="sm-pd">
+            <h3 class="sm-pd">Celebrate</h3>
+            <p class="sm-pd">Celebrate your love story as you embark on a beautiful journey together.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-4 iphone-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 arrow-img desktop-section">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/find-a-match-arrow.png" alt="">
+            </div>
+        </div>
+        <div class="row mt-90 pt-150 iphone-sec-row iphone-bg-img-desktop iphone-bg-img-mobile">
+            <div class="col-lg-7 iphone-col1">
+                <h1 class="white-text animate" data-animate="fade-in">Win an iPhone 15! </h1>
+                <h3 class="white-text sm-pt animate" data-animate="fade-in">Your chance to win an iPhone 15 when you sign up to Premium</h3>
+                <p class="white-text sm-pt animate" data-animate="fade-in">We are giving away an iPhone 15 when we launch! <br>Join the waitlist to stay tuned about the giveaway.</p>
+                <p class="white-text open-terms-form-en display-desktop-iphone animate" data-animate="fade-in-bottom"><a href="#" class="white-text">Terms & Conditions</a></p>
+                <button class="win-btn red-text animate" data-animate="fade-in-bottom">Win Now</button>
+                <p class="white-text open-terms-form-en display-mobile animate" data-animate="fade-in-bottom"><a href="#" class="white-text">T&Cs</a></p>
+            </div>
+            <div class="col-lg-5 iphone-mob iphone-col2 animate" data-animate="fade-in">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mobile.svg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section-4 ">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-lg-2 arrow-img desktop-section">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/find-a-match-arrow.png" alt="">
+            </div> -->
+            <div class="col-lg-6 pt-150 mb-pd-o">
+                <h2 class="red-text pd-right-30 pt-30 animate" data-animate="fade-in-left">Find a match that perfectly aligns with your preferences</h2>
+            </div>
+            <div class="col-lg-2 sparkle-img animate" data-animate="fade-in">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/sparkle.svg" alt="">
+            </div>
+        </div>
+
+        <!-- Match Cards in a Single Row -->
+        <div class="row mt-60 match-card animate" data-animate="fade-in-bottom">
+            <div class="col-lg-2 card-flex match-card-box ">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/match-card-1.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Religion</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box mobile-card-2">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/occupation.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Occupation</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/location.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Location</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box mobile-card-2">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/world.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Language</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/career.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Career</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box mobile-card-2">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/hobbies.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Hobbies</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/numerology.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Numerology</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box mobile-card-2">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/horoscopes.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Horoscopes</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/interests.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Interests</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 card-flex match-card-box mobile-card-2">
+                <div class="col-4 match-card-img">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/education.svg" alt="">
+                </div>
+                <div class="col-8 match-card-para">
+                    <p>Education</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of Match Cards Row -->
+    </div>
+</section>
+
+
+<!-- Section 5 -->
+<section class="section-2 couple-2 mt-90 pd-150">
+    <div class="container pt-60 sec2-container">
+        <div class="row">
+            <div class="col-lg-6 sec2-col-2 order-2 order-lg-1 animate" data-animate="fade-in-left">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/couple-2x.png" alt="">
+            </div>
+            <div class="col-lg-4 sec2-col-1 order-1 order-lg-2 animate" data-animate="fade-in-right">
+                <p class="sub-heading-16-14 black-text-op">Meet the founders</p>
+                <h2 class="pd-none-mob sm-pd">It started as a <br><span class="red-text">love story... </span></h2>
+                <p>Driven by their own beautiful love story, Chandan and Henal embarked on a journey to create a platform that would help others find their own happily ever after, fueled by their unwavering belief in the power of love and genuine connections. </p>
+                <p>Chandan and Henal recognize that a lasting relationship is built upon the pillars of respect, trust, and mutual understanding. Guided by these principles, they endeavoured to create a haven that would help others script their own tales of a happily ever after.</p>
+            </div>
+        </div>
+    </div>  
+</section>
+
+
+<!-- SECTION Join our waitlist Form -->
+
+<section class="bottom-waitlist display-desktop">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12 waitlist-bg-img-desktop waitlist-bg-img-mobile animate" data-animate="fade-in-bottom">
+            <div class="center-content">
+            <h2 class="waitlist-heading montserrat-font"><span class="red-text">Join</span> Our Waitlist</h2>
+        <?php echo apply_shortcodes( '[contact-form-7 id="f65bf28" title="Join our Newsletter"]' ); ?>
+</div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section Banner off Connecting -->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 banner-bottom-img animate" data-animate="fade-in">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-bottom-2x.jpg" alt="">
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<?php
+get_footer();?>
+
+
+<script>
+    $(document).ready(function(){
+        $('.slider-container').slick({
+            infinite: false,
+            slidesToShow: 4, // Number of slides to show at a time
+            slidesToScroll: 1, // Number of slides to scroll
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>',
+            responsive: [
+                {
+                    breakpoint: 992, // Adjust the breakpoint as needed
+                    settings: {
+                        slidesToShow: 2,
+                        dots: true,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                    }
+                },
+                {
+                    breakpoint: 768, // Adjust the breakpoint as needed
+                    settings: {
+                        slidesToShow: 1,
+                        dots: true,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                    }
+                }
+            ]
+        });
+    });
+</script>
